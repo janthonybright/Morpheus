@@ -10,4 +10,5 @@ module.exports = function(sequelize, Datatypes) {
             type: Datatypes.INTEGER
         },
     });  
+    return Stat; 
 };
