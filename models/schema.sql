@@ -1,2 +1,0 @@
-DROP DATABASE IF EXISTS Tokemon_db;
-CREATE DATABASE Tokemon_db;
