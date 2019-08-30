@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     })
-  Monster.hasMany(model.Stats, {
+  Monster.hasMany(model.Stat, {
     onDelete: "cascade"
   })
   };
