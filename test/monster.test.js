@@ -19,35 +19,41 @@ describe("GET /api/examples", function() {
 
   it("should find all examples", function(done) {
     // Add some examples to the db to test with
-    db.Monster.bulkCreate([
-      { name: "First Example", color: "red", element: "fire" },
-      { name: "second example", color: "green", element: "leaf" },
-    ]).then(function() {
-      // Request the route that returns all examples
-      request.get("/api/monsters").end(function(err, res) {
-        var responseStatus = res.status;
-        var responseBody = res.body;
-
-        // Run assertions on the response
-
-        expect(err).to.be.null;
-
-        expect(responseStatus).to.equal(200);
-
-        expect(responseBody)
-          .to.be.an("array")
-          .that.has.lengthOf(2);
-
-        expect(responseBody[0])
-          .to.be.an("object")
-          .that.includes({ name: "First Example", color: "red", element: "fire" });
-
-        expect(responseBody[1])
-          .to.be.an("object")
-          .that.includes({ name: "second example", color: "green", element: "leaf" });
-
-        // The `done` function is used to end any asynchronous tests
-        done();
+    db.User.create({
+      email: 'user@example.com',
+      username: 'george',
+      password: 'password'
+    }).then(user => {
+      db.Monster.bulkCreate([
+        { name: "First Example", color: "red", element: "fire" },
+        { name: "second example", color: "green", element: "leaf" },
+      ]).then(function() {
+        // Request the route that returns all examples
+        request.get("/api/monsters").end(function(err, res) {
+          var responseStatus = res.status;
+          var responseBody = res.body;
+  
+          // Run assertions on the response
+  
+          expect(err).to.be.null;
+  
+          expect(responseStatus).to.equal(200);
+  
+          expect(responseBody)
+            .to.be.an("array")
+            .that.has.lengthOf(2);
+  
+          expect(responseBody[0])
+            .to.be.an("object")
+            .that.includes({ name: "First Example", color: "red", element: "fire" });
+  
+          expect(responseBody[1])
+            .to.be.an("object")
+            .that.includes({ name: "second example", color: "green", element: "leaf" });
+  
+          // The `done` function is used to end any asynchronous tests
+          done();
+        });
       });
     });
   });
