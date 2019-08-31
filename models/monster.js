@@ -21,6 +21,7 @@ module.exports = function(sequelize, DataTypes) {
     Monster.belongsTo(model.User, {
       foreignKey: {
         allowNull: false
+        //foreignKey non accpeted when set false 
       }
     })
   Monster.hasMany(model.Stat, {
