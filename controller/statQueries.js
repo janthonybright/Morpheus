@@ -15,7 +15,7 @@ module.exports = {
                 UserId: id
             }
             
-        }).then(funciton (resp){
+        }).then(function (resp){
             console.log(resp)
             if(err) throw err;
             cb(resp)
