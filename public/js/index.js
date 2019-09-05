@@ -108,10 +108,14 @@ var handleDeleteBtnClick = function() {
 };
 function handleSignupSubmit (e){
   e.preventDefault()
+  const username = $("#userbox").val().trim();
+  const password = $("#passbox").val().trim();
   console.log("signup form submitted");
-  // when clicked console log input values
-  // make var object with username and password field
-  // post object with api url
+  console.log(username, password);
+  $.post("http://localhost:3000/api/signup", {username: username, password: password}, function(res){
+    console.log(res);
+    window.location.href="/create1";
+  })
 }
 
 // Add event listeners to the submit and delete buttons

@@ -6,10 +6,17 @@ module.exports = function(app) {
   // Get all examples
   app.post("/api/signup", function (req, res){
     console.log(req.body)
-    // db.User.create({
-    //   username: req.body.username,
-    //   password: req.body.password
-    // })
+    db.User.create({
+      username: req.body.username,
+      password: req.body.password
+    })
+    .then(function(user){
+      res.send({
+        success: true,
+        data: user 
+      })
+
+    })
   })
   
   app.get("/api/monsters", function(req, res) {
