@@ -5,20 +5,21 @@
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title></title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css">
-
+  <title></title>
 </head>
 
 <body>
   <br>
-  <p class="h1 text-center">Choose Your Tokemon </p>
-
+  {{!-- banner --}}
+  <div class="banner">
+    <img src="https://fontmeme.com/permalink/190907/e9d1ffcefd85ee05679a530ec3eb9a0d.png" alt="pokemon-font" border="0">
+  </div>
+{{!-- Tokemon Cards --}}
   <br>
   <br>
   <div class="d-flex justify-content-center">
@@ -55,20 +56,20 @@
 
   </div>
   <!-- Modal -->
-  <div class="modal fade" id="monsterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  <div class="modal fade" id="monsterModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="ModalLabel">Tokémon Creator</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <a href="https://fontmeme.com/pokemon-font/"><img src="https://fontmeme.com/permalink/190907/f93639307fc188a44ef00319cd0f7cc2.png" alt="pokemon-font" border="0"></a>
+          <button type="button" class="close text-right" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <h5>Choose Tokémon Element</h5>
           <div class="btn btn-group-toggle" data-toggle="buttons">
-            <label id="fireElement" class="btn btn-light">
+            <label id="fireElement" class="btn btn-light ">
               <input type="radio">
                 <span style="margin: 1rem; font-size: 3rem; color: red;">
                   <i class="fas fa-fire"></i>
@@ -93,15 +94,14 @@
           <h5>Name Your Tokémon</h5>
           <input id="tokeName" type="text" class="form-control">
         </div>
-
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary">Submit</button>
         </div>
       </div>
     </div>
   </div>
-
+<link rel="stylesheet" href="styles/styles.css">
 </body>
 
 </html>

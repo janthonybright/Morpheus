@@ -11,13 +11,20 @@
 
 </head>
 <body>
-
+{{!-- navbar --}}
+<nav class="navbar navbar-expand-lg bg-info">
+  <a class="navbar-brand text-dark" href="/home"><img src="https://fontmeme.com/permalink/190907/6f641460b3d78fa246e5ccb944a8d0f7.png" alt="pokemon-font" border="0"></a>
+        <a class="nav-link text-dark  " href="/home">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link text-dark active" href="/battle">Battle</a>
+</nav>
+{{!-- tokemon cards --}}
+<br>
         <div class="d-flex justify-content-center">
                 <div class="col-sm-2">
                   <div class="card">
                     <div class="card-body">
                       <h5 class="card-title">Player 1</h5>
-                      <img src="../public/styles/chirpet.gif" class="card-img-top" alt="...">
+                      <img src="styles/wadpole__1_.gif" class="card-img-top" alt="...">
                       <p class="card-text"></p>
                     </div>
                   </div>
@@ -26,7 +33,7 @@
                   <div class="card">
                     <div class="card-body">
                       <h5 class="card-title">Player 2</h5>
-                      <img src="../public/styles/doggo.gif" class="card-img-top" alt="...">
+                      <img src="styles/doggo.gif" class="card-img-top" alt="...">
                       <p class="card-text"></p>
                     </div>
                   </div>
@@ -47,7 +54,8 @@
                                 <div class="card">
                                   <div class="card-body">
                                     <h5 class="card-title">Attack!</h5>
-                                    <p class="card-text">Attack instructions here</p>
+                                    <p class="card-text">Attack the opponent!</p>
+                                    <p class="card-text">(Your element may do extra damage!)</p>
                                     <a href="#" class="btn btn-primary">Attack!</a>
                                   </div>
                                 </div>
@@ -56,7 +64,8 @@
                                 <div class="card">
                                   <div class="card-body">
                                     <h5 class="card-title">Defend!</h5>
-                                    <p class="card-text">Defend instructions here</p>
+                                    <p class="card-text">Defend the opponent's attack</p>
+                                    <p>(The Opponent's element might do extra damage!)</p>
                                     <a href="#" class="btn btn-primary">Defend!</a>
                                   </div>
                                 </div>
@@ -65,12 +74,13 @@
                                 <div class="card">
                                   <div class="card-body">
                                     <h5 class="card-title">Run!</h5>
-                                    <p class="card-text">Running instructions</p>
+                                    <p class="card-text">Run from battle!</p>
+                                    <p>(You will lose the chance to gain tokens and level up!)</p>
                                     <a href="#" class="btn btn-primary">Run!</a>
                                   </div>
                                 </div>
                               </div>
                     </div>
-
+<link rel="stylesheet" href="styles/styles.css">
 </body>
 </html>

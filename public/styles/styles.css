@@ -1,3 +1,9 @@
-/* .list-group-item {
-  line-height: 2.5;
-} */
+body {
+  background-color: lightblue;
+};
+
+.banner {
+  text-align: center;
+};
+
+
