@@ -29,6 +29,15 @@ module.exports = function(app) {
     })    
   })
 
+  app.put("/api/monster/:id", function(req, res){
+    var monsterId = req.params.id;
+    var colName = req.body.colName;
+    var info = req.body.info
+    statQueries.updateMonster(monsterId, colName, info, function(data) {
+      res.status(200).end()
+    })
+  })
+
   app.post("/api/monster", function(req, res){
     var monsterData = {
       name: req.body.name,
@@ -37,12 +46,29 @@ module.exports = function(app) {
       UserId: req.body.UserId,
     }
     monsterQueries.createMonster(monsterData, function(data){
-      res.status(200).json(data)
+      var stats = {
+        HealthPoint: 100, 
+        AttPoint: 69, 
+        DefPoint: 69, 
+        MonsterId: data.id
+      }
+      var monster = data;
+        statQueries.createStat(stats, function(data) {
+          res.status(200).json({ monster: monster, stats: data})
+        })
     })
   })
-app.get("/api/monster/:id", function(req, res){
 
+
+app.get("/api/monster/:id", function(req, res){
+  // the req.params.id is the id of the user
+  monsterQueries.getMonster(req.params.id, function(data) {
+    res.send(data)
+  })
+  
 })
+
+
 
 
 
@@ -60,3 +86,7 @@ app.get("/api/monster/:id", function(req, res){
     });
   });
 };
+
+
+
+///////////////////// Living Routes /////////////////////////////

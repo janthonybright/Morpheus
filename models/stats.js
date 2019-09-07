@@ -10,5 +10,15 @@ module.exports = function(sequelize, Datatypes) {
             type: Datatypes.INTEGER
         },
     });  
+
+    // Stat.associate = function (model) {
+    // Stat.belongsTo(model.Monster, {
+    // foreignKey: {
+    //     allowNull: false
+    //     //foreignKey non accpeted when set false 
+    //   }
+    // })
+    // }
+
     return Stat; 
 };

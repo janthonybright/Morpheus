@@ -9,23 +9,12 @@ module.exports = {
         })
     },
 
-    getUsersMonster: function(id, cb) {
-        db.Monster.findAll({
-            where: {
-                UserId: id
-            },
-            include: [db.Stat]
-        }).then(resp => {
-            console.log(resp) 
-            if(err) throw err;
-            cb(resp)
-        })
-    },
+
 
     getMonster: function(id,cb){
         db.Monster.findOne({
             where: {
-                id: id
+            UserId: id
             },
             include: [db.Stat]
         }).then(function(resp, err){
@@ -33,4 +22,9 @@ module.exports = {
             cb(resp)
         })
     }
+
+    
+
+
+
 }; 

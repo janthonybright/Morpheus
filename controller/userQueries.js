@@ -16,7 +16,7 @@ module.exports = {
             },
             include: [db.Monster]
         }).then(function(resp, err){
-            console.log(resp)
+           console.log(resp)
             if(err) throw err;
             cb(resp)
         })
