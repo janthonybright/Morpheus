@@ -5,7 +5,7 @@ const statQueries = require("../controller/statQueries")
 
 
 module.exports = function(app) {
-  // Get all examples
+ 
   app.post("/api/signup", function (req, res){
     console.log(req.body)
 
@@ -89,4 +89,3 @@ app.get("/api/monster/:id", function(req, res){
 
 
 
-///////////////////// Living Routes /////////////////////////////
