@@ -12,7 +12,6 @@ module.exports = function(app) {
   });
 
   app.get("/create", function (req, res) {
-  app.get("/create1", function (req, res) {
     res.render("tokemon")
   })
 

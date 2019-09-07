@@ -112,21 +112,18 @@ function handleSignupSubmit (e){
   const password = $("#passbox").val().trim();
   console.log("signup form submitted");
   console.log(username, password);
-<<<<<<< HEAD
+  $.post("/api/signup", {username: username, password: password}, function(res){
+    console.log(res);
+    window.location.href="/create";
+  })
+
+
+
   $.post("/api/signup", {username: username, password: password}, function(res){
     console.log(res);
     window.location.href="/create";
   })
 }
-
-
-=======
-  $.post("http://localhost:3000/api/signup", {username: username, password: password}, function(res){
-    console.log(res);
-    window.location.href="/create1";
-  })
-}
->>>>>>> master
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
