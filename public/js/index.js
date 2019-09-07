@@ -116,12 +116,12 @@ function handleSignupSubmit (e){
     console.log(res);
     window.location.href="/create";
   })
-}
 
 
-  $.post("http://localhost:3000/api/signup", {username: username, password: password}, function(res){
+
+  $.post("/api/signup", {username: username, password: password}, function(res){
     console.log(res);
-    window.location.href="/create1";
+    window.location.href="/create";
   })
 }
 
