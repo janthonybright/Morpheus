@@ -6,7 +6,7 @@ var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveTokemon: function(example) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -93,6 +93,22 @@ var handleDeleteBtnClick = function() {
     refreshExamples();
   });
 };
+<<<<<<< Updated upstream
+=======
+function handleSignupSubmit (e){
+  e.preventDefault()
+  const username = $("#userbox").val().trim();
+  const password = $("#passbox").val().trim();
+  console.log("signup form submitted");
+  console.log(username, password);
+  $.post("/api/signup", {username: username, password: password}, function(res){
+    console.log(res);
+    window.location.href="/create";
+  })
+}
+>>>>>>> Stashed changes
+
+
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
