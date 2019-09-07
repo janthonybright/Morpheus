@@ -121,3 +121,7 @@ button {
   transition: 0.2s ease; 
   cursor: pointer;
 }
+
+.banner {
+  text-align: center
+};

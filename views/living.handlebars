@@ -7,38 +7,41 @@
     <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+{{!--navbar  --}}
+<nav class="navbar navbar-expand-lg bg-info">
+  <a class="navbar-brand text-dark" href="/home"><img src="https://fontmeme.com/permalink/190907/6f641460b3d78fa246e5ccb944a8d0f7.png" alt="pokemon-font" border="0"></a>
+        <a class="nav-link text-dark active" href="/home">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link text-dark" href="/battle">Battle</a>
+</nav>
+{{!-- Tokemon card--}}
+<br>
         <div class="d-flex justify-content-center">
                 <div class="col-sm-2">
                   <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title"></h5>
-                      <img src="../public/styles/chirpet.gif" class="card-img-top" alt="...">
-                      <p class="card-text"></p>
-                      <a href="#" class=""></a>
+                      <img src="styles/wadpole__1_.gif" class="card-img-top" alt="tokemon gif">                      <p class="card-text"></p>
                     </div>
                   </div>
                 </div>
               
               </div>
               <br>
-
-              <div class="jumbotron jumbotron-fluid">
+{{!-- jumbotron --}}
+              <div class="jumbotron">
                     <div class="d-flex justify-content-center">
-                      <h1 class="display-8">HUNGRY!</h1>
-                      <p class="lead"></p>
+                      <h1 class="display-8">I'm Hungry!</h1>
                     </div>
                   </div>
-
+{{!-- input cards --}}
                   <div class="d-flex justify-content-center">
                         <div class="col-sm-3">
                           <div class="card">
                             <div class="card-body">
                               <h5 class="card-title">Sleep</h5>
-                              <p class="card-text">Sleep text will go here.</p>
+                              <p class="card-text">Sleeping will raise your Health Points!</p>
+                              <p>(costs 1 token)</p>
                               <a href="#" class="btn btn-primary">Sleep</a>
                             </div>
                           </div>
@@ -47,7 +50,8 @@
                           <div class="card">
                             <div class="card-body">
                               <h5 class="card-title">Train</h5>
-                              <p class="card-text">Train instructions will go here</p>
+                              <p class="card-text">Training will raise your Attack Points!</p>
+                              <p>(costs 1 token)</p>
                               <a href="#" class="btn btn-primary">Train</a>
                             </div>
                           </div>
@@ -55,13 +59,14 @@
                         <div class="col-sm-3">
                                 <div class="card">
                                   <div class="card-body">
-                                    <h5 class="card-title">Eat</h5>
-                                    <p class="card-text">Eat text here.</p>
-                                    <a href="#" class="btn btn-primary">EAT</a>
+                                    <h5 class="card-title">Feed</h5>
+                                    <p class="card-text">Feeding will raise your Defense Points!</p>
+                                    <p>(costs 1 token)</p>
+                                    <a href="#" class="btn btn-primary">Eat</a>
                                   </div>
                                 </div>
                               </div>
                     </div>
-
+<link rel="stylesheet" href="styles/styles.css">
 </body>
 </html>
