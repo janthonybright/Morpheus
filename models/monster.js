@@ -12,10 +12,10 @@ module.exports = function(sequelize, DataTypes) {
     type: DataTypes.STRING,
     allowNull: false
     },
-    element: {
-      type: DataTypes.STRING,
-      allowNull: false
-    }
+    // element: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false
+    // }
   });
   Monster.associate = function (model) {
     Monster.belongsTo(model.User, {
@@ -24,7 +24,7 @@ module.exports = function(sequelize, DataTypes) {
         //foreignKey non accpeted when set false 
       }
     })
-  Monster.hasMany(model.Stat, {
+  Monster.hasOne(model.Stat, {
     onDelete: "cascade"
   })
   };

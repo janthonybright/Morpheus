@@ -2,7 +2,7 @@ const db = require("../models")
 
 module.exports = {
     createUser: function(User, cb){
-        db.User.create(User).then(function(resp){
+        db.User.create(User).then(function(resp, err){
             console.log(resp)
             if(err) throw err;
             cb(resp)
@@ -10,13 +10,13 @@ module.exports = {
     },
 
     getUser: function(id, cb){
-        db.User.findAll({
+        db.User.findOne({
             where: {
-                userId: id
+                id: id
             },
-            include: [db.User]
-        }).then(function(resp){
-            console.log(resp)
+            include: [db.Monster]
+        }).then(function(resp, err){
+           console.log(resp)
             if(err) throw err;
             cb(resp)
         })
