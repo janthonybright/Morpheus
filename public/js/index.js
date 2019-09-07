@@ -3,6 +3,7 @@ var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
+const $signupForm = $("#signup");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -16,6 +17,18 @@ var API = {
       data: JSON.stringify(example)
     });
   },
+
+  signUp: function(formData) {
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "api/signup",
+      data: JSON.stringify(formData)
+    });
+  },
+
   getExamples: function() {
     return $.ajax({
       url: "api/examples",
@@ -99,6 +112,7 @@ function handleSignupSubmit (e){
   const password = $("#passbox").val().trim();
   console.log("signup form submitted");
   console.log(username, password);
+<<<<<<< HEAD
   $.post("/api/signup", {username: username, password: password}, function(res){
     console.log(res);
     window.location.href="/create";
@@ -106,7 +120,15 @@ function handleSignupSubmit (e){
 }
 
 
+=======
+  $.post("http://localhost:3000/api/signup", {username: username, password: password}, function(res){
+    console.log(res);
+    window.location.href="/create1";
+  })
+}
+>>>>>>> master
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+$signupForm.on("submit", handleSignupSubmit)
