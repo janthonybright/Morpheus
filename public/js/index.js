@@ -93,8 +93,6 @@ var handleDeleteBtnClick = function() {
     refreshExamples();
   });
 };
-<<<<<<< Updated upstream
-=======
 function handleSignupSubmit (e){
   e.preventDefault()
   const username = $("#userbox").val().trim();
@@ -106,7 +104,6 @@ function handleSignupSubmit (e){
     window.location.href="/create";
   })
 }
->>>>>>> Stashed changes
 
 
 
