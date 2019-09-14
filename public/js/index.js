@@ -4,6 +4,7 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 const $signupForm = $("#signup");
+const $tokeForm = $("#tokeSubmit");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -110,22 +111,20 @@ function handleSignupSubmit (e){
   e.preventDefault()
   const username = $("#userbox").val().trim();
   const password = $("#passbox").val().trim();
+  const reType = $("#retype").val().trim();
   console.log("signup form submitted");
-  console.log(username, password);
-  $.post("/api/signup", {username: username, password: password}, function(res){
-    console.log(res);
-    window.location.href="/create";
-  })
-
-
-
-  $.post("/api/signup", {username: username, password: password}, function(res){
+  console.log(username, password, reType);
+  $.post("/api/signup", {username: username, password: password, confirmPassword: reType}, function(res){
     console.log(res);
     window.location.href="/create";
   })
 }
+  function handleTokemonSubmit (e) {
+    location.href="/home";
+  }
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 $signupForm.on("submit", handleSignupSubmit)
+$tokeForm.on("click", handleTokemonSubmit)
